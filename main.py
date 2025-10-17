@@ -87,7 +87,7 @@ def EnablePages(repoName: str):
 
     response = requests.post(f"https://api.github.com/repos/{OWNER}/{repoName}/pages", json=payload, headers=GITHUB_HEADER)
     
-    if response.status_code not in (201, 422):
+    if response.status_code not in (201, 409):
         raise Exception(f"Failed to enable pages: {response.status_code}, {response.text}")
 
 def GetFileSHA(repoName: str, fileName: str) -> Optional[str]:

@@ -22,7 +22,7 @@ from google.genai import Client
 
 # Secrets and Keys
 
-OWNER = "24f2004631"
+OWNER = os.getenv("OWNER")
 GITHUB_API_KEY = os.getenv("GITHUB_PAT")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 SECRET = os.getenv("SECRET_KEY")
